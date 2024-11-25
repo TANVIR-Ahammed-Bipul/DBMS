@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .file-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .file-list li {
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .file-list li:hover {
+            background-color: #f1f1f1;
+        }
+        .file-list li .file-name {
+            font-weight: bold;
+        }
+        .file-list li .upload-date {
+            color: #777;
+        }
+        .actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+        a, .logout-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a:hover, .logout-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Dashboard</h1>
+    </header>
+
+    <main>
+        <h2>My Files</h2>
+        
+        <!-- Display the list of files -->
+        <ul class="file-list">
+            {% for file in files %}
+            <li>
+                <span class="file-name">{{ file.file_name }}</span> - 
+                <span class="upload-date">Uploaded on {{ file.upload_date|date:"M. d, Y, H:i p" }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <!-- Actions: Upload New File and Logout -->
+        <div class="actions">
+            <a href="{% url 'upload' %}">Upload New File</a>
+            <br><br>
+            <a href="{% url 'logout' %}" class="logout-button">Logout</a>
+        </div>
+    </main>
+</body>
+</html>
