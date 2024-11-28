@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to DataVault</title>
+    <link rel="stylesheet" href="/core/templates/css/style.css">
 </head>
 <body>
-    <h1>Welcome to DataVault</h1>
-    <p>Your secure and scalable data management solution.</p>
-    <a href="{% url 'dashboard' %}">Go to Dashboard</a>
+    <div class="container">
+        <h1>Welcome to DataVault</h1>
+        <p>Your secure and scalable data management solution.</p>
+        <button class="btn">
+            <a class="link-style" href="{% url 'dashboard' %}">Go to Dashboard</a>
+        </button>
+        
+    </div>
+  
 </body>
 </html>
