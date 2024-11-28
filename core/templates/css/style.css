@@ -1,5 +1,29 @@
 *{
     margin:0;
     padding:0;
-    box-border:border-box;
+    box-sizing:border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background:linear-gradient(135deg,#2f2b8c,#08a5cc);
+    color: white;
+    padding: 10px;
+    
+
+}
+.container button{
+    background-color: coral;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.container button:hover
+{
+    background-color: violet;
+}
+.container a{
+    color: white;
+    text-decoration:none;
 }
