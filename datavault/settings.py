@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import pymysql
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -123,9 +125,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-LOGIN_URL = '/accounts/login/'  # This matches your current setup
-LOGIN_REDIRECT_URL = '/dashboard/'
-LOGOUT_REDIRECT_URL = '/'  # or wherever you want users to go after logging out
+#LOGIN_URL = '/accounts/login/'  # This matches your current setup
+LOGIN_URL = 'login'  # Refers to the 'login' URL pattern
+LOGIN_REDIRECT_URL = 'dashboard'
+#LOGOUT_REDIRECT_URL = '/'  # or wherever you want users to go after logging out
 
 
 # Default primary key field type

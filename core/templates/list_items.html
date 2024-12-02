@@ -1,0 +1,13 @@
+<h2>Your Items</h2>
+<a href="{% url 'create_item' %}">Add New Item</a>
+<ul>
+    {% for item in items %}
+    <li>
+        {{ item.title }} - <a href="{% url 'update_item' item.pk %}">Edit</a>
+        <form method="POST" action="{% url 'delete_item' item.pk %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>

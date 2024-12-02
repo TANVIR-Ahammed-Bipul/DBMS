@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create/Update Item</title>
+</head>
+<body>
+    <h1>Create or Update Item</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'item_list' %}">Back to List</a>
+</body>
+</html>

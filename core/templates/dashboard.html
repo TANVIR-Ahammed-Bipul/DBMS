@@ -59,6 +59,8 @@
             border-radius: 4px;
             text-decoration: none;
             cursor: pointer;
+            display: inline-block;
+            margin: 5px;
         }
         a:hover, .logout-button:hover {
             background-color: #45a049;
@@ -83,10 +85,10 @@
             {% endfor %}
         </ul>
 
-        <!-- Actions: Upload New File and Logout -->
+        <!-- Actions -->
         <div class="actions">
             <a href="{% url 'upload' %}">Upload New File</a>
-            <br><br>
+            <a href="{% url 'item_list' %}">Manage Your Items</a>
             <a href="{% url 'logout' %}" class="logout-button">Logout</a>
         </div>
     </main>
