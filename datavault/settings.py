@@ -128,7 +128,7 @@ STATIC_URL = 'static/'
 #LOGIN_URL = '/accounts/login/'  # This matches your current setup
 LOGIN_URL = 'login'  # Refers to the 'login' URL pattern
 LOGIN_REDIRECT_URL = 'dashboard'
-#LOGOUT_REDIRECT_URL = '/'  # or wherever you want users to go after logging out
+LOGOUT_REDIRECT_URL = '/'  # or wherever you want users to go after logging out
 
 
 # Default primary key field type

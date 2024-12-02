@@ -1,13 +1,92 @@
-<h2>Your Items</h2>
-<a href="{% url 'create_item' %}">Add New Item</a>
-<ul>
-    {% for item in items %}
-    <li>
-        {{ item.title }} - <a href="{% url 'update_item' item.pk %}">Edit</a>
-        <form method="POST" action="{% url 'delete_item' item.pk %}" style="display:inline;">
-            {% csrf_token %}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-    {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Items</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        a.add-item {
+            text-decoration: none;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        a.add-item:hover {
+            background-color: #218838;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            max-width: 600px;
+        }
+        li {
+            background: #ffffff;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li a {
+            text-decoration: none;
+            color: #007bff;
+            margin-right: 10px;
+        }
+        li a:hover {
+            text-decoration: underline;
+        }
+        form {
+            display: inline;
+        }
+        button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Items</h2>
+    <a href="{% url 'create_item' %}" class="add-item">Add New Item</a>
+    <ul>
+        {% for item in items %}
+        <li>
+            <span>{{ item.title }}</span>
+            <div>
+                <a href="{% url 'update_item' item.pk %}">Edit</a>
+                <form method="POST" action="{% url 'delete_item' item.pk %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

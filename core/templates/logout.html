@@ -1,7 +1,38 @@
 {% extends 'dashboard.html' %}
 
 {% block content %}
+<style>
+  .logout-container {
+      text-align: center;
+      margin-top: 100px;
+      font-family: Arial, sans-serif;
+  }
+  h2 {
+      color: #28a745;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+  }
+  p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 30px;
+  }
+  a {
+      text-decoration: none;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+  }
+  a:hover {
+      background-color: #0056b3;
+  }
+</style>
+
+<div class="logout-container">
   <h2>Logged out successfully</h2>
   <p>You have been logged out.</p>
-  <a href="{% url 'home' %}">Go to Home</a>
+  <a href="{% url 'logout' %}?next={% url 'home' %}">Logout</a>
+</div>
 {% endblock %}

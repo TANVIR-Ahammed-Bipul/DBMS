@@ -14,8 +14,34 @@
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 0;
-            text-align: center;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .logout-container {
+            margin: 0;
+        }
+        .logout-container form {
+            display: inline;
+        }
+        .logout-button {
+            background-color: white;
+            color: #4CAF50;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .logout-button:hover {
+            background-color: #45a049;
+            color: white;
         }
         main {
             max-width: 900px;
@@ -52,26 +78,34 @@
             margin-top: 20px;
             text-align: center;
         }
-        a, .logout-button {
+        a {
             background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
             border-radius: 4px;
             text-decoration: none;
-            cursor: pointer;
             display: inline-block;
             margin: 5px;
+            transition: background-color 0.3s;
         }
-        a:hover, .logout-button:hover {
+        a:hover {
             background-color: #45a049;
         }
     </style>
 </head>
 <body>
+    <!-- Header with logout button -->
     <header>
         <h1>Welcome to Your Dashboard</h1>
+        <div class="logout-container">
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        </div>
     </header>
 
+    <!-- Main content -->
     <main>
         <h2>My Files</h2>
         
@@ -80,7 +114,7 @@
             {% for file in files %}
             <li>
                 <span class="file-name">{{ file.file_name }}</span> - 
-                <span class="upload-date">Uploaded on {{ file.upload_date|date:"M. d, Y, H:i p" }}</span>
+                <span class="upload-date">Uploaded on {{ file.upload_date|date:"M. d, Y, H:i a" }}</span>
             </li>
             {% endfor %}
         </ul>
@@ -89,7 +123,6 @@
         <div class="actions">
             <a href="{% url 'upload' %}">Upload New File</a>
             <a href="{% url 'item_list' %}">Manage Your Items</a>
-            <a href="{% url 'logout' %}" class="logout-button">Logout</a>
         </div>
     </main>
 </body>
