@@ -5,47 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Item</title>
     <style>
+        /* Body styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9fafb;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #495057;
         }
+
+        /* Form container styles */
         .form-container {
             background: #ffffff;
-            padding: 20px 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 400px;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
             text-align: center;
         }
+
+        /* Heading styles */
         h2 {
-            color: #333;
+            font-size: 24px;
+            font-weight: 600;
             margin-bottom: 20px;
+            color: #333;
         }
+
+        /* Form styles */
         form {
             margin: 0;
-        }
-        form p {
             text-align: left;
-            color: #555;
-            margin-bottom: 15px;
         }
+
+        form p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Input fields */
+        input, textarea, select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #495057;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        /* Button styles */
         button {
             background-color: #007bff;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004085;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px 30px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
         }
     </style>
 </head>

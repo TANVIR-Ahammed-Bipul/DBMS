@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Join View</title>
+</head>
+<body>
+    <h1>Joined Data</h1>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.field1 }} - {{ item.related_field.field2 }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

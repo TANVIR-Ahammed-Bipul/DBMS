@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
+from .views import joined_view
 
 urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
@@ -11,4 +12,6 @@ urlpatterns = [
     path('items/<int:pk>/delete/', views.delete_item, name='delete_item'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # Logout view
     path('', views.home, name='home'),  # Default route for home
+    path('joined/', joined_view, name='joined_view'),
 ]
+

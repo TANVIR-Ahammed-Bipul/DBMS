@@ -5,47 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New Item</title>
     <style>
+        /* General body styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9fafc;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f8;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #333;
         }
+
+        /* Form container styles */
         .form-container {
             background: #ffffff;
-            padding: 20px 30px;
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
             text-align: center;
         }
+
         h2 {
-            color: #333;
-            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745; /* Primary heading color */
+            margin-bottom: 25px;
         }
+
         form {
             margin: 0;
         }
+
         form p {
             text-align: left;
             color: #555;
-            margin-bottom: 15px;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #f8f9fa;
+            color: #333;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #28a745;
+            outline: none;
+        }
+
         button {
+            width: 100%;
             background-color: #28a745;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #218838;
+        }
+
+        button:active {
+            background-color: #1e7e34;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            h2 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
         }
     </style>
 </head>

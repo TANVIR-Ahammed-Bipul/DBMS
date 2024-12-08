@@ -6,10 +6,10 @@ class File(models.Model):
     file_name = models.CharField(max_length=255)
     upload_date = models.DateTimeField(auto_now_add=True)
     file = models.FileField(upload_to='uploads/')
+    file_size = models.IntegerField(blank=True, null=True)  # Optional
 
     def __str__(self):
         return self.file_name
-
 
 class DataItem(models.Model):
     title = models.CharField(max_length=255)

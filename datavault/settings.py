@@ -129,7 +129,8 @@ STATIC_URL = 'static/'
 LOGIN_URL = 'login'  # Refers to the 'login' URL pattern
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = '/'  # or wherever you want users to go after logging out
-
+LOGIN_URL = '/admin/login/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

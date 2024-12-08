@@ -1,23 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to DataVault</title>
-    <link rel="stylesheet" href="/core/templates/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to DataVault</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    h1 {
+      margin-top: 50px;
+      font-size: 3.5rem;
+      font-weight: 700;
+      text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    p {
+      font-size: 1.5rem;
+      margin: 20px auto;
+      max-width: 700px;
+      line-height: 1.8;
+      text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .cta-button {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 20px;
+    }
+    .cta-button:hover {
+      transform: scale(1.1);
+      box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.5);
+    }
+    .upper-section {
+      margin-top: 20px;
+    }
+    .lower-section {
+      background-color: var(--footer-bg-color, #581845);
+      color: white;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .lower-section p {
+      font-size: 1.2rem;
+      white-space: nowrap;
+      animation: move-text 20s ease-in-out infinite; /* Adjust animation duration and timing function */
+    }
+    @keyframes move-text {
+      0% {
+        transform: translateX(-100%); /* Start from the left */
+      }
+      50% {
+        transform: translateX(100%); /* Move to the right */
+      }
+      100% {
+        transform: translateX(-100%); /* Move back to the left */
+      }
+    }
+    footer {
+      position: relative;
+      font-size: 0.9rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="heading">Welcome to<span> DataVault</span></h1>
-        <marquee behavior="alternate" direction="right">
-            <p class="para">Your secure and scalable data management solution.</p>
-        </marquee>
-       
-        <button class="btn">
-            <a class="link-style" href="{% url 'dashboard' %}">Go to Dashboard</a>
-        </button>
-        
-    </div>
-  
-</body>
-</html>
+  <div class="upper-section">
+    <h1>Welcome to DataVault</h1>
+    <p>Your secure and scalable data management solution, tailored for modern businesses.</p>
+    <a href="{% url 'login' %}" class="cta-button">Go to Dashboard</a>
+  </div>
+
+  <div class="lower-section">
+    <p>Explore the power of DataVault! Tailored for the future of data management.</p>
+  </div>
+
+  <footer>&copy; 2024 DataVault. All rights reserved.</footer>
